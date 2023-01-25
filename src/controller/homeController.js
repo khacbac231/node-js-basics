@@ -11,7 +11,15 @@ let getUserPage = async (req, res) => {
     }
     return res.render("user.ejs", { dataUser: rows[0] });
 };
+let createUserPage = async (req, res) => {
+    console.log(req.body);
+    let { firstName, lastName, email, address } = req.body;
+    await pool.execute('INSERT INTO users (firstName, lastName, email, address) VALUES (?,?,?,?)',
+        [firstName, lastName, email, address]);
+    return res.redirect("/");
+};
 module.exports = {
     getHomePage,
-    getUserPage
+    getUserPage,
+    createUserPage
 };

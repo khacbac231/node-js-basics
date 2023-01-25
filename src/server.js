@@ -7,6 +7,10 @@ require('dotenv').config();
 const app = express()
 const port = process.env.PORT || 3000;
 
+//config to exchange data between client and server
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 //set up view engine
 configViewEngine(app);
 //init router

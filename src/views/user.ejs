@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserDetail</title>
+</head>
+
+<body>
+    <div class="w3-container">
+        <ul class="w3-ul w3-border" style="width:30%">
+
+            <li>
+                <span>ID: </span>
+                <%=dataUser.id %>
+            </li>
+            <li>
+                <span>FirstName: </span>
+                <%= dataUser.firstName %>
+            </li>
+            <li>
+                <span>LastName: </span>
+                <%= dataUser.lastName %>
+            </li>
+            <li>
+                <span>Email: </span>
+                <%= dataUser.email %>
+            </li>
+            <li>
+                <span>Address: </span>
+                <%= dataUser.address %>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

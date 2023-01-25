@@ -42,10 +42,15 @@
                         <td>
                             <%= dataUser[i].lastName %>
                         </td>
-                        <td>
+                        <td class="crud-action">
                             <a class="detail-user" href="/detail/user/<%=dataUser[i].id%>" target="_blank">Details</a>
-                            <button type="button">Edit</button>
-                            <button type="button">Delete</button>
+                            <form action="/edit-user/<%=dataUser[i].id%>" method="GET">
+                                <button type="submit">Edit</button>
+                            </form>
+                            <form action="/delete-user" method="POST">
+                                <input type="text" class="hidden-input" value="<%=dataUser[i].id%>" name="userId" />
+                                <button type="submit">Delete</button>
+                            </form>
                         </td>
                     </tr>
                     <% } %>

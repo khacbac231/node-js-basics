@@ -8,6 +8,12 @@ const initWebRoutes = (app) => {
     router.get("/detail/user/:userId", homeController.getUserPage);
 
     router.post("/create-new-user", homeController.createUserPage);
+
+    router.post("/delete-user", homeController.deleteUserPage);
+
+    router.get("/edit-user/:userId", homeController.editUserPage);
+
+    router.post("/update-user/:userId", homeController.updateUserPage);
     return app.use('/', router);
 };
 export default initWebRoutes;

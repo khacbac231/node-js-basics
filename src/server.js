@@ -1,6 +1,7 @@
 import express from 'express';
 import configViewEngine from './configs/viewEngine';
 import initRouter from './router/web';
+import initAPIRoutes from './router/api';
 // import connection from './configs/connectdb';
 require('dotenv').config();
 
@@ -15,6 +16,8 @@ app.use(express.json());
 configViewEngine(app);
 //init router
 initRouter(app);
+//init api routes
+initAPIRoutes(app);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
